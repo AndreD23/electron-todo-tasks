@@ -1,4 +1,9 @@
-provider: generic
-url: 'http://10.0.3.18:1337'
-channel: latest
+owner: AndreD23
+repo: electron-todo-tasks
+provider: github
+host: github.com
+protocol: https
+token: 4a60bbb1a2369ddb1dab7c283c9c5685645ae4d5
+private: true
+releaseType: release
 updaterCacheDirName: electron-todo-tasks-updater

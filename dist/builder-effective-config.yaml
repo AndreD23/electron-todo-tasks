@@ -18,7 +18,11 @@ nsis:
   createStartMenuShortcut: true
   menuCategory: true
 publish:
-  provider: generic
-  url: 'http://10.0.3.18:1337'
-  channel: latest
+  provider: github
+  owner: AndreD23
+  host: github.com
+  protocol: https
+  token: <stripped sensitive data>
+  private: true
+  releaseType: release
 electronVersion: 4.0.7
