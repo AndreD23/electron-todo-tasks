@@ -29,6 +29,10 @@
     "electron-builder": "^20.38.5",
     "electron-winstaller": "^3.0.4"
   },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/AndreD23/electron-todo-tasks.git"
+  },
   "build": {
     "appId": "com.imperiosoft.electron-todo-tasks",
     "productName": "Electron Todo Tasks",
@@ -54,9 +58,13 @@
       "menuCategory": true
     },
     "publish": {
-      "provider": "generic",
-      "url": "http://10.0.3.18:1337",
-      "channel": "latest"
+      "provider": "github",
+      "owner": "Andre Dorneles",
+      "host": "github.com",
+      "protocol": "https",
+      "token": "4a60bbb1a2369ddb1dab7c283c9c5685645ae4d5",
+      "private": true,
+      "releaseType": "release"
     }
   }
 }
