@@ -1,0 +1,28 @@
+directories:
+  output: dist
+  buildResources: build
+appId: com.imperiosoft.electron-todo-tasks
+productName: Electron Todo Tasks
+win:
+  target: nsis
+  icon: assets/icons/win/icon.ico
+linux:
+  target:
+    - AppImage
+    - deb
+nsis:
+  perMachine: true
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  menuCategory: true
+publish:
+  provider: github
+  owner: AndreD23
+  host: github.com
+  protocol: https
+  token: <stripped sensitive data>
+  private: true
+  releaseType: release
+electronVersion: 4.0.7
