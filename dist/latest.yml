@@ -1,8 +1,0 @@
-version: 1.0.0
-files:
-  - url: electron-todo-tasks-setup-1.0.0.exe
-    sha512: CxeRg1xQO4FxUG5oZJunxXjczSp7rsDh8eejuRB1z5eND8avzqQ2EtkuEaTqVTeE2sG6wjPOhUGTI2r4Jjkjdw==
-    size: 86229997
-path: electron-todo-tasks-setup-1.0.0.exe
-sha512: CxeRg1xQO4FxUG5oZJunxXjczSp7rsDh8eejuRB1z5eND8avzqQ2EtkuEaTqVTeE2sG6wjPOhUGTI2r4Jjkjdw==
-releaseDate: '2019-03-18T19:37:45.684Z'
