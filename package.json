@@ -30,8 +30,8 @@
     "electron-winstaller": "^3.0.4"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/AndreD23/electron-todo-tasks.git"
+    "type": "git",
+    "url": "https://github.com/AndreD23/electron-todo-tasks.git"
   },
   "build": {
     "appId": "com.imperiosoft.electron-todo-tasks",
