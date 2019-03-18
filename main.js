@@ -63,7 +63,7 @@ let addMenu = null;
 app.on('ready', function () {
 
     let version = app.getVersion();
-    let windowtitle = 'Electron Shopping App - Versão: ' + version;
+    let windowtitle = 'Electron ToDo Tasks App - Versão: ' + version;
 
     // Cria nova janela
     mainWindow = new BrowserWindow({
