@@ -1,0 +1,62 @@
+{
+  "name": "electron-todo-tasks",
+  "product": "ElectronToDoTasks",
+  "title": "Electron ToDo Tasks",
+  "version": "1.0.0",
+  "description": "App de Lista de Tarefas feita em Electron",
+  "author": "Andre Dorneles",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package-mac": "cross-var electron-packager . $npm_package_name --platform=darwin --arch=x64 --asar=true --prune=true --out=../builds --icon=assets/icons/mac/icon.icns --overwrite",
+    "package-win-32": "cross-var electron-packager . $npm_package_name --platform=win32 --arch=ia32 --asar=true --prune=true --out=../builds --icon=assets/icons/win/icon.ico --win32metadata.CompanyName=\"$npm_package_author\" --win32metadata.FileDescription=\"$npm_package_title\" --win32metadata.ProductName=\"$npm_package_title\" --overwrite",
+    "package-win-64": "cross-var electron-packager . $npm_package_name --platform=win32 --arch=x64 --asar=true --prune=true --out=../builds --executable-name=$npm_package_name --icon=assets/icons/win/icon.ico --win32metadata.CompanyName=\"$npm_package_author\" --win32metadata.FileDescription=\"$npm_package_title\" --win32metadata.ProductName=\"$npm_package_title\" --overwrite",
+    "package-linux": "cross-var electron-packager . $npm_package_name --platform=linux  --arch=x64 --asar=true --prune=true --out=../builds --icon=assets/icons/png/icon.png --overwrite",
+    "package-all": "cross-var electron-packager . $npm_package_name --platform=win32,darwin,linux --arch=ia32,x64 --asar=true --prune=true --out=../builds --executable-name=$npm_package_name --icon=assets/icons/all/icon.ico --win32metadata.ProductName=\"$npm_package_title\" --win32metadata.CompanyName=\"$npm_package_author\" --win32metadata.FileDescription=\"$npm_package_title\" --win32metadata.OriginalFilename=\"$npm_package_title\" --overwrite",
+    "create-installer-win": "node ./createinstaller.js",
+    "create-debian-installer": "electron-installer-debian --src ../builds/electron-shopping-linux-x64/ --arch amd64 --config ../debian.json",
+    "build-windows": "npm run package-win-64 && npm run create-installer-win",
+    "build-all": "npm run package-all && npm run create-installer-win && npm run create-debian-installer",
+    "build": "electron-builder --x64 --ia32"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "electron-log": "^3.0.1",
+    "electron-updater": "^4.0.6"
+  },
+  "devDependencies": {
+    "electron": "^4.0.7",
+    "electron-builder": "^20.38.5",
+    "electron-winstaller": "^3.0.4"
+  },
+  "build": {
+    "appId": "com.imperiosoft.electron-todo-tasks",
+    "productName": "Electron Todo Tasks",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icons/win/icon.ico"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "nsis": {
+      "perMachine": true,
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "menuCategory": true
+    },
+    "publish": {
+      "provider": "generic",
+      "url": "http://10.0.3.18:1337",
+      "channel": "latest"
+    }
+  }
+}

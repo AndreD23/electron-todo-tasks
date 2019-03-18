@@ -1,0 +1,24 @@
+directories:
+  output: dist
+  buildResources: build
+appId: com.imperiosoft.electron-todo-tasks
+productName: Electron Todo Tasks
+win:
+  target: nsis
+  icon: assets/icons/win/icon.ico
+linux:
+  target:
+    - AppImage
+    - deb
+nsis:
+  perMachine: true
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  menuCategory: true
+publish:
+  provider: generic
+  url: 'http://10.0.3.18:1337'
+  channel: latest
+electronVersion: 4.0.7

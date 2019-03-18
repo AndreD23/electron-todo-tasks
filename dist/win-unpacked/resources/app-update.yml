@@ -1,0 +1,4 @@
+provider: generic
+url: 'http://10.0.3.18:1337'
+channel: latest
+updaterCacheDirName: electron-todo-tasks-updater

@@ -1,0 +1,11 @@
+{
+    "dest": "../installers/debian-installer/",
+    "icon": "../app/assets/icons/png/icon.png",
+    "categories": [
+      "Utility"
+    ],
+    "lintianOverrides": [
+      "changelog-file-missing-in-native-package"
+    ],
+    "options.name" : "electron-shopping"
+  }

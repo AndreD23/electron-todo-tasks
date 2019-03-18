@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+
+<head>
+    <link rel="stylesheet" href="assets/css/materialize.min.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a class="brand-logo center">Lista de Compras</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <ul></ul>
+    </div>
+
+    <script>
+        console.log(process);
+
+        const electron = require('electron');
+        const { ipcRenderer } = electron;
+        const ul = document.querySelector('ul');
+
+        //Captura a adição de item
+        ipcRenderer.on('item:add', function (e, item) {
+            ul.className = 'collection';
+            const li = document.createElement('li');
+            li.className = 'collection-item';
+            const itemText = document.createTextNode(item);
+            li.appendChild(itemText);
+            ul.appendChild(li);
+        });
+
+        //captura a limpeza dos itens
+        ipcRenderer.on('item:clear', function () {
+            ul.innerHTML = '';
+            ul.className = '';
+        });
+
+        // Remove item pelo click duplo
+        ul.addEventListener('dblclick', removeItem);
+
+        function removeItem(e) {
+            e.target.remove();
+
+            if (ul.children.length == 0) {
+                ul.className = '';
+            }
+        }
+    </script>
+</body>
+
+</html>
