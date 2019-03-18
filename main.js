@@ -16,6 +16,9 @@ const { app, BrowserWindow, Menu, ipcMain, dialog } = electron;
 const { autoUpdater } = require("electron-updater")
 const log = require('electron-log');
 
+//Conigura o token de acesso ao repositório privado github
+process.env.GH_TOKEN='4a60bbb1a2369ddb1dab7c283c9c5685645ae4d5';
+
 //-------------------------------------------------------------------
 // LOGGING
 //
@@ -63,7 +66,7 @@ let addMenu = null;
 app.on('ready', function () {
 
     let version = app.getVersion();
-    let windowtitle = 'Electron Shopping App - Versão: ' + version;
+    let windowtitle = 'Electron ToDo Tasks App - Versão: ' + version;
 
     // Cria nova janela
     mainWindow = new BrowserWindow({
