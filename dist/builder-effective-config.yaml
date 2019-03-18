@@ -19,7 +19,7 @@ nsis:
   menuCategory: true
 publish:
   provider: github
-  owner: Andre Dorneles
+  owner: AndreD23
   host: github.com
   protocol: https
   token: <stripped sensitive data>
