@@ -16,8 +16,12 @@ const { app, BrowserWindow, Menu, ipcMain, dialog } = electron;
 const { autoUpdater } = require("electron-updater")
 const log = require('electron-log');
 
-//Conigura o token de acesso ao repositório privado github
-process.env.GH_TOKEN='4a60bbb1a2369ddb1dab7c283c9c5685645ae4d5';
+//-------------------------------------------------------------------
+// Variáveis de ambiente
+//-------------------------------------------------------------------
+process.env.NODE_ENV = 'local';
+process.env.GH_TOKEN='1575c55f6f72cea15ac1f1c09c58353c6fdb2f60'; //Conigura o token de acesso ao repositório privado github
+
 
 //-------------------------------------------------------------------
 // LOGGING
@@ -29,11 +33,6 @@ autoUpdater.logger = log;
 autoUpdater.logger.transports.file.level = 'info';
 log.info('Iniciando o App...');
 
-
-//-------------------------------------------------------------------
-// Variável de ambiente
-//-------------------------------------------------------------------
-process.env.NODE_ENV = 'local';
 
 
 //-------------------------------------------------------------------

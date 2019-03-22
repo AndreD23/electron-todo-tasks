@@ -2,7 +2,7 @@
   "name": "electron-todo-tasks",
   "product": "ElectronToDoTasks",
   "title": "Electron ToDo Tasks",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "App de Lista de Tarefas feita em Electron",
   "author": "Andre Dorneles",
   "main": "main.js",
@@ -17,7 +17,9 @@
     "create-debian-installer": "electron-installer-debian --src ../builds/electron-shopping-linux-x64/ --arch amd64 --config ../debian.json",
     "build-windows": "npm run package-win-64 && npm run create-installer-win",
     "build-all": "npm run package-all && npm run create-installer-win && npm run create-debian-installer",
-    "build": "electron-builder --x64 --ia32"
+    "pack": "electron-builder --dir",
+    "build": "electron-builder --x64 --ia32",
+    "publish": "electron-builder --x64 --ia32 --publish always"
   },
   "license": "ISC",
   "dependencies": {
@@ -28,10 +30,6 @@
     "electron": "^4.0.7",
     "electron-builder": "^20.38.5",
     "electron-winstaller": "^3.0.4"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/AndreD23/electron-todo-tasks.git"
   },
   "build": {
     "appId": "com.imperiosoft.electron-todo-tasks",
@@ -59,12 +57,13 @@
     },
     "publish": {
       "provider": "github",
+      "repo": "electron-todo-tasks",
       "owner": "AndreD23",
       "host": "github.com",
       "protocol": "https",
-      "token": "4a60bbb1a2369ddb1dab7c283c9c5685645ae4d5",
-      "private": true,
-      "releaseType": "release"
+      "releaseType": "draft",
+      "token": "<blablabla>",
+      "private": true
     }
   }
 }
